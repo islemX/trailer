@@ -26,7 +26,7 @@ const MovieCard = ({movie}) => {
                      <Card.Text style ={{width:'100%', height:'40%', overflow :'auto',          }} >
                      {movie.description}
                     </Card.Text>
-                    <Link to={`${movie.id}`}>
+                    <Link to={`/${movie.id}`}>
                                 <Button variant="outline-primary" style ={{alignSelf:'center'  }}>See trailer</Button>
                                 </Link>
                   

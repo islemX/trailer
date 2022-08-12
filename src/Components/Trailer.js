@@ -3,21 +3,21 @@ import { Button, Card } from "react-bootstrap";
 import ReactPlayer from "react-player";
 import {Link} from 'react-router-dom';
 import { useParams } from "react-router-dom";
-const Trailer = ({movieName}) => {
+const Trailer = ({movies}) => {
   const{id}=useParams();
-    let idmovie=Number(id)
-    const movie=movieName.find((elem)=>  elem.id  ===idmovie)
+    let idmovie=Number(id);
+    const movie=movies.find((elem) =>   elem.id  ===idmovie)
   return (
-            <div  style={{ backgroundColor: 'black',  display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            height: '100vh',}}  >
+            <div className="trailer"  >
 <Card style={{ width: '40.1rem' }}>
 <ReactPlayer url={movie.trailer}  />
-<Card.Body style={{backgroundColor:'red'}}>
-  <Card.Title><h1>{movie.title}</h1></Card.Title>
+<Card.Body style={{backgroundColor:'beige'}}>
+  
+  <p  variant="body2"
+                      color="#546e7a"
+                      fontFamily="Segoe UI">{movie.description}</p>
   <Link to ="/">
-  <Button  style={{backgroundColor:'balck'}} >Go back</Button>
+  <Button style={{Color:"azure"}} >Go back</Button>
   </Link>
 </Card.Body>
 </Card>

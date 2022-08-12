@@ -9,7 +9,8 @@ import Trailer from "./Components/Trailer";
 function App() {
   const [movieName, setMovieName] = React.useState(MovieData)
   const [titleSearch, setTitleSearch] = React.useState('');
-  const [ratingSearch,setRatingSearch] = React.useState(0)
+  const [ratingSearch,setRatingSearch] = React.useState(0);
+  const [movies, setMovies] = React.useState(MovieData)
 
 	
 	
@@ -36,7 +37,7 @@ function App() {
       />	
 </div> } />
 
-<Route path="/:id" component={<Trailer movieName={movieName}     />}/>
+<Route path="/:id" element={<Trailer movies={movies}  setMovies={setMovies}   />}/>
 </Routes>
 </div>
 			
